@@ -5,6 +5,7 @@
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
     %title= "#{"#{@title} // " if !@title.nil? } iamneato.com"
     %link{:href => '/reset.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/styles/grid.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/styles.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/styles/jquery.fancybox.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
@@ -15,11 +16,13 @@
   %body
     #header
       #header-wrapper
+        #menu-wrapper= haml :_menu, :layout => false
         #header-img
           I am neato, you are neato, we are neato, ummmm ...
-        #menu-wrapper= haml :_menu, :layout => false
-    #main
-      = yield
+        
+    #main{ :class => "row" }
+      %div{ :class => "column grid_12" }
+        = yield
     #footer= haml :_footer, :layout => false
     %script{:type => 'text/javascript'}
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
