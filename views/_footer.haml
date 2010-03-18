@@ -1,32 +1,40 @@
 #footer-wrapper{ :class => "row" }
-  %div{ :class => "column grid_3" }
-    %h3 Recent Posts
-    %ul
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-  %div{ :class => "column grid_5" }
+  %div{ :class => "column grid_7" }
     %h3 Open Source Projects
     %ul
       %li 
-        Blah blah
+        %h4
+          Stowaway
         %p
-          This is a fake description of a OSS project for all to see ...
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-      %li Blah blah
-  %div{ :class => "column grid_4" }
+          Stowaway is a ruby gem that will search through the source code of 
+          a web project and find all of the images, scripts and stylesheets 
+          that aren't being used. To use, simply provide the path to the 
+          directory you wish to search.
+        %a{ :href => "http://github.com/ecavazos/stowaway" } view source
+      %li
+        %h4 Speks
+        %p
+          Speks is a simple specification framework and spec-runner for 
+          %a{ :href => "http://nodejs.org/" }node.js
+          code. Speks provides a set of should style prototype/extension 
+          methods to make test code more readable.
+        %a{ :href => "http://github.com/ecavazos/speks" } view source
+          
+  %div{ :class => "column grid_5" }
+    %h3 Recent Posts
+    %ul.recent
+      - for article in @getter.all.sort[0..5]
+        %li
+          %a{:href => article_path(article)}= article.title
+.row
+  %div{ :class => "column grid_12" }
     %h3 Also On
-    %p
-      Are you buying what I'm selling? Yes! Then you should subscribe to my
-      <a href="/articles.atom">feed</a>, follow me on
+    .also-on
+      You can also follow my trash talking on
       %a{ :href => 'http://www.twitter.com/ecni' } twitter
-      and fork me on
-      <a href="http://github.com/ecavazos">github</a>.
+      and my open source hacking on
+      <a href="http://github.com/ecavazos">github</a>.  Oh, and don't forget
+      to subscribe to the <a href="/articles.atom">feed</a>.
 #bottom
   #copyright
     Copyright © 2006 to Forever, by Emilio Cavazos

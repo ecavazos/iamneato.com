@@ -33,10 +33,14 @@ helpers do
       gsub(/src=(["'])(\/.*?)(["'])/, "src=#{path}")
   end
   
+  def page_title(title)
+    return "iamneato.com" if title.nil?
+    "#{title} - iamneato.com"
+  end
 end
 
 get '/' do
-  @articles = @getter.all.sort[0..10]
+  @articles = @getter.all.sort[0..4]
   haml :home
 end
 

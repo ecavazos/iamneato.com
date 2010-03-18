@@ -3,7 +3,7 @@
 
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
-    %title= "#{"#{@title} // " if !@title.nil? } iamneato.com"
+    %title= page_title(@title)
     %link{:href => '/reset.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/styles/grid.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/styles.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
@@ -20,9 +20,8 @@
         #header-img
           I am neato, you are neato, we are neato, ummmm ...
         
-    #main{ :class => "row" }
-      %div{ :class => "column grid_12" }
-        = yield
+    #main
+      = yield
     #footer= haml :_footer, :layout => false
     %script{:type => 'text/javascript'}
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
