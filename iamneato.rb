@@ -3,6 +3,7 @@ require "sinatra"
 require "haml"
 require "sass"
 require "time"
+require "dm-core"
 require "lib/article_getter"
 require "lib/helpers"
 require "lib/haml_overrides"
@@ -11,12 +12,21 @@ require "lib/haml_overrides"
 
 set :haml, {:format => :html5 }
 
-before do
-  @getter = ArticleGetter.new(File.join(Sinatra::Application.root, "articles"))
+class Post
+  include DataMapper::Resource
+  
+  property :id,         Serial
+  property :title,      String
+  property :body,       Text
+  property :created_at, DateTime
 end
 
-helpers do
-  include HelpersMod
+configure do
+  DataMapper.setup(:default, "sqlite3::memory:")
+end
+
+before do
+  @getter = ArticleGetter.new(File.join(Sinatra::Application.root, "articles"))
 end
 
 get '/' do

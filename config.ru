@@ -1,2 +1,2 @@
-require 'iamneato'
+require "iamneato"
 run Sinatra::Application

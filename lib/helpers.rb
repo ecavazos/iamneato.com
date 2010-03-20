@@ -1,4 +1,4 @@
-module HelpersMod
+helpers do
   def article_body(article)
     haml(article.template, :layout => false)
   end

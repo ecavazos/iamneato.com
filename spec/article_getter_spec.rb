@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) + '/spec_helper'
-require File.dirname(__FILE__) + '/../lib/article_getter'
-require File.dirname(__FILE__) + '/../lib/archive'
+require File.dirname(__FILE__) + "/spec_helper"
+require "article_getter"
+require "archive"
 
 describe "ArticleGetter" do
   
