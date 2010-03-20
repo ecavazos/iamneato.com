@@ -1,42 +1,22 @@
-require 'rubygems'
-require 'sinatra'
-require 'haml'
-require 'sass'
-require 'time'
-require 'lib/article_getter'
+require "rubygems"
+require "sinatra"
+require "haml"
+require "sass"
+require "time"
+require "lib/article_getter"
+require "lib/helpers"
+require "lib/haml_overrides"
 
 # shotgun -s thin -p 4567 iamneato.rb
 
+set :haml, {:format => :html5 }
+
 before do
-  @getter = ArticleGetter.new(File.join(Sinatra::Application.root, 'articles'))
+  @getter = ArticleGetter.new(File.join(Sinatra::Application.root, "articles"))
 end
 
 helpers do
-  def article_body(article)
-    haml(article.template, :layout => false)
-  end
-
-  def article_path(article)
-    "/#{article.published.strftime("%Y/%m/%d")}/#{article.id}"
-  end
-  
-  def date(article)
-    article.published.strftime("%Y/%m/%d")
-  end
-  
-  def absoluteify_links(html)
-    host = 'http://www.iamneato.com'
-    path = "\\1#{host}\\2\\3"
-    
-    html.
-      gsub(/href=(["'])(\/.*?)(["'])/, "href=#{path}").
-      gsub(/src=(["'])(\/.*?)(["'])/, "src=#{path}")
-  end
-  
-  def page_title(title)
-    return "iamneato.com" if title.nil?
-    "#{title} - iamneato.com"
-  end
+  include HelpersMod
 end
 
 get '/' do
@@ -73,28 +53,12 @@ get '/articles.atom' do
   haml :feed, :layout => false
 end
 
-get '/:style.css' do
+get '/:stylesheet.css' do
   content_type 'text/css', :charset => 'utf-8'
-  sass :"stylesheets/#{params[:style]}"
+  sass :"stylesheets/#{params[:stylesheet]}", :style => :compact
 end
 
 not_found do
   @title = '404 - Page Not Found'
   haml :'404', :layout => false
-end
-
-module Haml::Filters::Preserve
-  def render(text)
-    Haml::Helpers.preserve(Haml::Helpers.html_escape(text))
-  end
-end
-
-module Haml::Filters::Textile
-  include Haml::Filters::Base
-  
-  def render(text)
-    t = ::RedCloth.new(text)
-    t.hard_breaks = false
-    t.to_html(:textile)
-  end
 end
