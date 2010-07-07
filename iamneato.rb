@@ -1,12 +1,21 @@
-$: << File.expand_path(File.dirname(__FILE__) + '/lib/')
-require "rubygems"
-require "sinatra"
-require "haml"
-require "sass"
-require "time"
-require "article_getter"
-require "helpers"
-require "haml_overrides"
+begin
+  # Require the pre-resolved locked set of gems.
+  require ::File.expand_path('../.bundle/environment', __FILE__)
+rescue LoadError
+  # Fallback on doing the resolve at runtime.
+  require 'rubygems'
+  require 'bundler'
+  Bundler.setup
+end
+
+$:.unshift File.expand_path(File.dirname(__FILE__) + '/lib/')
+
+require 'sinatra'
+require 'haml'
+require 'time'
+require 'article_getter'
+require 'helpers'
+require 'haml_overrides'
 
 set :haml, {:format => :html5 }
 

@@ -1,0 +1,21 @@
+--- 
+hash: a1c5a5e46f7b753873a0bc48d2f9ae080a3ef6a2
+sources: 
+- Rubygems: 
+    uri: http://rubygems.org
+specs: 
+- haml: 
+    version: 3.0.12
+- rack: 
+    version: 1.2.1
+- sinatra: 
+    version: "1.0"
+dependencies: 
+  haml: 
+    version: = 3.0.12
+    group: 
+    - :default
+  sinatra: 
+    version: = 1.0
+    group: 
+    - :default
