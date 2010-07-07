@@ -1,9 +1,11 @@
 --- 
-hash: a1c5a5e46f7b753873a0bc48d2f9ae080a3ef6a2
+hash: 67d01f7d05c40bc847bb697eaaf322b5083b3b5e
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
 specs: 
+- RedCloth: 
+    version: 4.2.3
 - haml: 
     version: 3.0.12
 - rack: 
@@ -13,6 +15,10 @@ specs:
 dependencies: 
   haml: 
     version: = 3.0.12
+    group: 
+    - :default
+  RedCloth: 
+    version: = 4.2.3
     group: 
     - :default
   sinatra: 

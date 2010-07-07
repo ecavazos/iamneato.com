@@ -6,7 +6,7 @@ end
 
 module Haml::Filters::Textile
   include Haml::Filters::Base
-  
+
   def render(text)
     t = ::RedCloth.new(text)
     t.hard_breaks = false

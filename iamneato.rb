@@ -12,6 +12,7 @@ $:.unshift File.expand_path(File.dirname(__FILE__) + '/lib/')
 
 require 'sinatra'
 require 'haml'
+require 'redcloth'
 require 'time'
 require 'article_getter'
 require 'helpers'
