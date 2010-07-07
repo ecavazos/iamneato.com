@@ -1,29 +1,14 @@
+$: << File.expand_path(File.dirname(__FILE__) + '/lib/')
 require "rubygems"
 require "sinatra"
 require "haml"
 require "sass"
 require "time"
-require "dm-core"
-require "lib/article_getter"
-require "lib/helpers"
-require "lib/haml_overrides"
-
-# shotgun -s thin -p 4567 iamneato.rb
+require "article_getter"
+require "helpers"
+require "haml_overrides"
 
 set :haml, {:format => :html5 }
-
-class Post
-  include DataMapper::Resource
-  
-  property :id,         Serial
-  property :title,      String
-  property :body,       Text
-  property :created_at, DateTime
-end
-
-configure do
-  DataMapper.setup(:default, "sqlite3::memory:")
-end
 
 before do
   @getter = ArticleGetter.new(File.join(Sinatra::Application.root, "articles"))

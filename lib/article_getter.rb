@@ -1,5 +1,5 @@
-require 'lib/article'
-require 'lib/archive'
+require 'article'
+require 'archive'
 
 class ArticleGetter
   

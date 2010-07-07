@@ -1,9 +1,3 @@
-# I got this code from artpop:
-# http://github.com/artpop/hughevans.net/blob/32a6310c825bb7ce0c470cf0ef325bdb5e9491a4/lib/article.rb
-
-# But it was originally from toolmantim:
-# http://github.com/toolmantim/toolmantim/blob/972372615c534916a3a1c8ae0f01e72626ca83e0/lib/article.rb
-
 class Article
 
   attr_reader :path, :template
