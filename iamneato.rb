@@ -1,15 +1,8 @@
-require 'rubygems'
-require 'bundler'
-
-Bundler.setup unless File.exists?(File.expand_path('../.bundle/environment', __FILE__))
-
-require 'sinatra'
-
-Bundler.require(:default)
-
 # add lib dir to load path
 $:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
 
+require 'bundler_helper'
+require 'sinatra'
 require 'time'
 require 'article_getter'
 require 'helpers'

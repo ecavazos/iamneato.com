@@ -1,5 +1,5 @@
 --- 
-hash: 42f93ba53799fa18360b82a5497e21e02a599ae2
+hash: c520bb9ec9d3ad0594f672b42bb514983a2e0325
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
@@ -29,6 +29,8 @@ dependencies:
     version: = 1.0
     group: 
     - :default
+    require: []
+
   rack-test: 
     version: = 0.5.4
     group: 
