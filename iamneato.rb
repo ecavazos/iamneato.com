@@ -1,18 +1,15 @@
-begin
-  # Require the pre-resolved locked set of gems.
-  require ::File.expand_path('../.bundle/environment', __FILE__)
-rescue LoadError
-  # Fallback on doing the resolve at runtime.
-  require 'rubygems'
-  require 'bundler'
-  Bundler.setup
-end
+require 'rubygems'
+require 'bundler'
 
-$:.unshift File.expand_path(File.dirname(__FILE__) + '/lib/')
+Bundler.setup unless File.exists?(File.expand_path('../.bundle/environment', __FILE__))
 
 require 'sinatra'
-require 'haml'
-require 'redcloth'
+
+Bundler.require(:default)
+
+# add lib dir to load path
+$:.unshift File.join(File.expand_path(File.dirname(__FILE__)), 'lib')
+
 require 'time'
 require 'article_getter'
 require 'helpers'
@@ -67,3 +64,4 @@ not_found do
   @title = '404 - Page Not Found'
   haml :'404', :layout => false
 end
+

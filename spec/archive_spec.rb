@@ -1,20 +1,20 @@
-require "spec_helper"
-require "archive"
+require File.join(File.expand_path(File.dirname(__FILE__)), 'spec_helper')
+require 'archive'
 
-describe "Archive" do
+describe 'Archive' do
 
-  it "should initialize month_year" do
-    a = Archive.new "August 2009"
-    a.month_year.should == "August 2009"
+  it 'should initialize month_year' do
+    a = Archive.new 'August 2009'
+    a.month_year.should == 'August 2009'
   end
 
-  it "should initialize articles to an empty array" do
-    a = Archive.new "August 2009"
+  it 'should initialize articles to an empty array' do
+    a = Archive.new 'August 2009'
     a.articles.length.should == 0
   end
 
-  it "should initialize articles with article" do
-    a = Archive.new "August 2009", "fake article array"
+  it 'should initialize articles with article' do
+    a = Archive.new 'August 2009', 'fake article array'
     a.articles.length.should == 1
   end
 
