@@ -25,7 +25,7 @@ module Helpers
     "#{title} - iamneato.com"
   end
 
-  def illustrations()
+  def illustrations
     path = path || File.dirname(File.expand_path(__FILE__)) + '/../public/images/illustrations'
     entries = []
     Dir.new(path).each do |f|
@@ -36,8 +36,7 @@ module Helpers
         :mtime => stat.mtime
       }
     end
-    entries
-      .sort { |x,y| y[:mtime] <=> x[:mtime] }
-      .map { |x| x[:name] }
+    entries.sort! { |x,y| y[:mtime] <=> x[:mtime] }
+    entries.map { |x| x[:name] }
   end
 end
