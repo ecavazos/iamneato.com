@@ -25,7 +25,7 @@ module Helpers
     "#{title} - iamneato.com"
   end
 
-  def illustrations()
+  def illustrations
     path = path || File.dirname(File.expand_path(__FILE__)) + '/../public/images/illustrations'
     entries = []
     Dir.new(path).each do |f|
