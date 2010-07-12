@@ -1,11 +1,13 @@
 require File.join(File.expand_path(File.dirname(__FILE__)), 'spec_helper')
 require File.join(File.expand_path(File.dirname(__FILE__)), '../iamneato')
 
+Iamneato.set :environment, :test
+
 describe 'I Am Neato' do
   include Rack::Test::Methods
 
   def app
-    @app ||= Sinatra::Application
+    Iamneato
   end
 
   it 'should respond to /' do
