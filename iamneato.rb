@@ -10,6 +10,10 @@ require 'haml_overrides'
 
 set :haml, {:format => :html5 }
 
+helpers do
+  include Helpers
+end
+
 before do
   @getter = ArticleGetter.new(File.join(Sinatra::Application.root, "articles"))
 end
@@ -27,6 +31,7 @@ end
 
 get '/doodles' do
   @title = 'Doodles'
+  @illustrations = illustrations
   haml :doodles
 end
 
