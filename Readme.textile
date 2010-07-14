@@ -1,12 +1,8 @@
 h1. iamneato.com
 
-This is the code responsible for "iamneato.com":http://www.iamneato.com/.  It's
-centered around a simple but deceivingly powerful Sinatra app.  It gives you
-full control of your website and it's a great way to learn Sinatra.  If you're
-interested in Sinatra, I encourage you to dig in.
+This is the code responsible for "iamneato.com":http://www.iamneato.com/.  It's centered around a simple but deceivingly powerful Sinatra app.  It gives you full control of your website and it's a great way to learn Sinatra.  If you're interested in Sinatra, I encourage you to dig in.
 
-This code was inspired by Hugh Evans:
-"hughevans.net":http://github.com/artpop/hughevans.net
+This code was inspired by Hugh Evans: "hughevans.net":http://github.com/artpop/hughevans.net
 
 h2. License
 
