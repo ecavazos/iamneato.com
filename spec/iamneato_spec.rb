@@ -1,5 +1,5 @@
-require File.join(File.expand_path(File.dirname(__FILE__)), 'spec_helper')
-require File.join(File.expand_path(File.dirname(__FILE__)), '../iamneato')
+require File.expand_path('../spec_helper', __FILE__)
+require File.expand_path('../../Iamneato', __FILE__)
 
 Iamneato.set :environment, :test
 
