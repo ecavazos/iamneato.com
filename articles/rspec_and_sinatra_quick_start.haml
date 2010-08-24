@@ -138,7 +138,7 @@
     :preserve
       it "should return blah blah blah when viewing root" do
         get '/'
-        last_response.body == "blah blah blah"
+        last_response.body.should == "blah blah blah"
       end
 
 :textile          
