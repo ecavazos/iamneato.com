@@ -1,8 +1,8 @@
 @import _css3
 
 body
-  background-color: #efefef
-  color: #3d3d3d
+  background-color: #222
+  color: #ddd
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
   font-size: 100%
   line-height: 1.125em
@@ -14,217 +14,17 @@ body
   margin: 0
 
 #main
-  clear: both
+  margin: 300px auto 0 auto
+  text-align: center
+  width: 400px
 
-  h2
-    font-size: 30px
-    line-height: 31px
-    margin: 0 0 20px 0
-    text-shadow: #fff 0 -1px 0px
-
-  h3
-    clear: both
-    font-size: 1.5em
-    margin: 0 0 5px 0
-
-  h4
-    font-size: 20px
-
-  p
-    clear: both
-    font-size: 20px
-    line-height: 24px
-    margin: 0 0 15px 0
-
-    a
-      text-decoration: none
-
-  p.image
-    text-align: center
-
-  a:link, a:visited, a:active
-    color: #478cca
-
-  a:hover
-    color: #478cca
-    text-decoration: underline
-
-  blockquote
-    font:
-      family: Georgia,"Times New Roman",Times,serif
-      size: 20px
-    line-height: normal
-    color: #838383
-    margin: 0 0 20px 0
-    padding-left: 20px
-
-  pre
-    background-color: #232323
-    padding: 15px
-    margin: 20px 0 30px
-    overflow: auto
-
-  pre, code
-    font-family: 'Monaco', 'Courier New', 'Terminal', monospace
-    font-size: 14px
-    color: #e6e0db
-    overflow: auto
-
-  ol
-    list-style: decimal
-    list-style-position: outside
-    margin: 0 15px 15px 35px
-
-    li
-      margin: 0 0 5px 0
-
-#header
-  background: url("/images/hdr_bg.jpg") repeat-x
-  margin: 0 0 30px 0
-  width: 100%
-  overflow: hidden
-
-#header-wrapper
-  margin: 0 auto
-  overflow: hidden
-  width: 1024px
-
-#menu-wrapper
-  clear: both
-  width: 700px
-  margin: 0 auto
-
-#menu
-  margin: 2px auto 0 auto
-  position: absolute
-  width: auto
-  z-index: 99
-
-  ul
-
-    li
-      display: inline
-      font-family: Georgia
-      font-size: 20px
-      font-weight: bold
-      line-height: 1.75em
-
-      a
-        color: #b1b1b1
-        text-decoration: none
-
-      a:hover
-        color: #929292
-
-#header-img
-  background: url('/images/hdr.jpg') no-repeat
-  margin: 0 auto 15px auto
-  text-indent: -5000px
-  height: 357px
-
-#doodles
-  float: left
-  margin: 40px auto 40px auto
-  padding-left: 40px
-
-  div
-    background-color: #fff
+  h1
+    background-color: #000
+    background: rgba(0, 0, 0, 0.2)
     +border-radius(20px, 20px, 20px, 20px)
-    +box-shadow(#999, 0px, 0px, 5px)
-    float: left
-    margin: 0 20px 20px 0
-    padding: 10px
-
-  .row-end
-    margin: 0 0 20px 0
-
-#about
-
-  div
-    margin: 0
-    padding: 0 0 30px 0
-
-  #about-list
-    margin: 0 0 15px 0
-
-  strong
-    font-weight: bold
-
-  ul
-    list-style-type: disc
-    list-style-position: inside
-    margin: 15px 0 0 15px
-
-  li
-    margin-bottom: 5px
-
-  h4
-    margin-bottom: 15px
-
-.four-oh-four-body
-  background-color: #fff
-
-#four-oh-four
-  position: absolute
-  top: 50%
-  left: 50%
-  width: 364px
-  height: 448px
-  margin-top: -(448px/2)
-  margin-left: -(364px/2)
-
-.highlight
-  background-color: #FFFEB6
-  color: #222
-  padding: 0 4px
-  line-height: normal
-
-.update
-  border: solid 1px #ccc
-  background-color: #e9e9e9
-  padding: 20px
-
-  p
-    font-size: 0.875em
-    line-height: 1.125em
-    margin: 0
-
-// RUBY / JAVASCRIPT
-code span
-  &.comment
-    color: #FF830F
-    font-style: italic
-
-  &.string
-    color: #A1FF25
-
-  &.symbol
-    color: #6D9CBE
-
-  &.keywords
-    color: #228DFF
-    font-weight: bold
-
-  &.classes
-    color: #FF0CCE
-
-  &.instancevars
-    color: #FFE30F
-
-code.html span
-  &.tag
-    color: #FFC66D
-
-  &.attribute
-    color: #FFC66D
-
-  &.string
-    color: #A5C261
-
-  &.doctype
-    color: #FFC66D
-
-@import views/stylesheets/archive.sass
-@import views/stylesheets/article.sass
-@import views/stylesheets/footer.sass
-
+    border: solid 1px #555
+    box-shadow: #111 0px 2px 7px
+    font-size: 40px
+    margin-bottom: 20px
+    padding: 40px
+    text-shadow: #ccc 0 -1px 0px
